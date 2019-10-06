@@ -1,6 +1,13 @@
+require 'pry'
 class CampingTripsController < ApplicationController
     get '/trips' do
-        erb :"/camping_trips/index"
+        if logged_in?
+            binding.pry
+            @trips = current_user.camping_trips
+            erb :"/camping_trips/index"
+        else
+            redirect to '/login'
+        end
     end
 
     get '/trips/new' do
