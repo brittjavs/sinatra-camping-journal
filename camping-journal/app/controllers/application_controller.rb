@@ -11,4 +11,15 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  helpers do
+  def logged_in?
+    !!session[:user_id]
+  end
+    @user = User.find_by(session[:user_id]) # Returns the object associated with the user id
+  
+
+  def current_user
+    @camper = Camper.find_by(session[:user_id])
+  end
+
 end
