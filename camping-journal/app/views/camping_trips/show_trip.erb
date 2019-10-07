@@ -2,3 +2,8 @@
 <%=@trip.park%>
 <%=@trip.campground%>
 <%=@trip.notes%>
+
+<form method="POST" action="/trips/<%= @trip.id %>/delete">
+  <input type = "hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Entry">
+</form>
