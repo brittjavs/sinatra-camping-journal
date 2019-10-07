@@ -37,7 +37,10 @@ class CampersController < ApplicationController
     end
 
     get '/logout' do
+        if logged_in?
+        session.clear
         erb :"campers/logout"
+        end
     end
     
 end
