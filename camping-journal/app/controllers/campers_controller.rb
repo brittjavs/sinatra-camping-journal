@@ -1,10 +1,11 @@
+require 'pry'
 class CampersController < ApplicationController
 
     get '/signup' do
         if logged_in?
             redirect to '/trips'
         else
-        erb :"campers/signup"
+        erb :"/campers/signup"
         end
     end
 
@@ -22,12 +23,12 @@ class CampersController < ApplicationController
         if logged_in?
             redirect to '/trips'
         else
-        erb :"campers/login"
+        erb :"/campers/login"
         end
     end
 
     post '/login' do
-        @camper = Camper.find_by(params[:username])
+        @camper = Camper.find_by(username: params[:username])
         if @camper && @camper.authenticate(params[:password])
             session[:user_id] = @camper.id
             redirect to '/trips'
@@ -38,8 +39,8 @@ class CampersController < ApplicationController
 
     get '/logout' do
         if logged_in?
-        session.clear
-        erb :"campers/logout"
+            session.clear
+            redirect to '/'
         end
     end
     
