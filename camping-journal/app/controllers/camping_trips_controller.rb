@@ -11,11 +11,20 @@ class CampingTripsController < ApplicationController
     end
 
     get '/trips/new' do
+        if logged_in?
         erb :"/camping_trips/create_trip"
+        else
+            redirect to '/login'
+        end
     end
 
     post '/trips' do
+        if logged_in?
+            CampingTrip.create(params)
         redirect to '/trips'
+        else
+            redirect to '/login'
+        end
     end
 
     get '/trips/:id' do
