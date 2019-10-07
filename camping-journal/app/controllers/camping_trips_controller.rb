@@ -60,7 +60,15 @@ class CampingTripsController < ApplicationController
     end
 
     delete '/trips/:id' do
-        redirect to '/trips/index'
+        if logged_in?
+            @trip = CampingTrip.find_by(params[:id])
+            if current_user.id == @trip.camper_id
+                @trip.delete
+                redirect to '/trips'
+            end
+        else
+            redirect to '/login'
+        end
     end
 
 end
