@@ -19,8 +19,9 @@ class CampingTripsController < ApplicationController
 
     post '/trips' do
         if logged_in?
-            CampingTrip.create(params)
-        redirect to '/trips'
+            binding.pry
+            @trip = CampingTrip.create(params)
+        redirect to "/trips/#{@trip.id}"
         else
             redirect to '/login'
         end
@@ -49,8 +50,9 @@ class CampingTripsController < ApplicationController
     patch '/trips/:id' do
         if logged_in?
         @trip = CampingTrip.find_by(params[:id])
-            if current_user
-            @trip.update(params[:trip])
+            if current_user.id == @trip.camper_id
+                binding.pry
+            @trip.update(params)
             redirect to "/trips/#{@trip.id}"
             end
         else
