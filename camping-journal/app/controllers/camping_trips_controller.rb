@@ -39,8 +39,8 @@ class CampingTripsController < ApplicationController
     end
 
     get '/trips/:id/edit' do
-        @trip = CampingTrip.find_by(params[:id])
         if logged_in?
+            @trip = CampingTrip.find_by(params[:id])
             erb :"/camping_trips/edit_trip"
         else
             redirect to '/login'
@@ -48,7 +48,15 @@ class CampingTripsController < ApplicationController
     end
 
     patch '/trips/:id' do
-        redirect to '/trips/:id'
+        if logged_in?
+        @trip = CampingTrip.find_by(params[:id])
+            if current_user
+            @trip.update(params[:trip])
+            redirect to "/trips/#{@trip.id}"
+            end
+        else
+            redirect to '/login'
+        end
     end
 
     delete '/trips/:id' do
