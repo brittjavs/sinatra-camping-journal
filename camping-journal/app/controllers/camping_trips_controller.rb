@@ -19,7 +19,6 @@ class CampingTripsController < ApplicationController
 
     post '/trips' do
         if logged_in?
-            #currently showing Billie only
             @trip = CampingTrip.create(params)
         redirect to "/trips/#{@trip.id}"
         else
@@ -30,7 +29,8 @@ class CampingTripsController < ApplicationController
     get '/trips/:id' do
         if logged_in?
             @trip = CampingTrip.find_by(params[:id])
-            if current_user
+            binding.pry
+            if current_user.id == @trip.camper_id
                 erb :"/camping_trips/show_trip"
             end
         else
