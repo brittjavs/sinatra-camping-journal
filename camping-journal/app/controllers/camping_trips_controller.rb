@@ -19,7 +19,7 @@ class CampingTripsController < ApplicationController
 
     post '/trips' do
         if logged_in?
-            binding.pry
+            #currently showing Billie only
             @trip = CampingTrip.create(params)
         redirect to "/trips/#{@trip.id}"
         else

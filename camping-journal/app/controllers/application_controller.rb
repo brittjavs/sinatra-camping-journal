@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     end    
 
     def current_user
-      @camper = Camper.find_by(session[:user_id])
+      @camper = Camper.find_by_id(session[:user_id])
     end
   end
 

@@ -10,11 +10,10 @@ class CampersController < ApplicationController
     end
 
     post '/signup' do
-        binding.pry
         if params[:camper].empty? #will need revision, should i check params or validate in model?
             redirect to '/signup'
         else
-            @camper = Camper.create(params)
+            @camper = Camper.create(params[:camper])
             session[:user_id] = @camper.id
             redirect to '/trips'
         end
