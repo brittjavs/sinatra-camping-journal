@@ -19,7 +19,8 @@ class CampingTripsController < ApplicationController
 
     post '/trips' do
         if logged_in?
-            @trip = CampingTrip.create(params)
+            binding.pry
+            @trip = CampingTrip.create(params[:trip])
             @trip.camper_id = current_user.id
             @trip.save
             redirect to "/trips/#{@trip.id}"
