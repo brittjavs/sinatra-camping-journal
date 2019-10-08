@@ -1,17 +1,17 @@
 <h1> Add a new entry to your journal </h1>
 <form action="/trips" method="POST">
 <label>Date Camped:</label>
-<input type="text" name="date_camped"><br>
+<input type="text" name="trip[date_camped]"><br>
 
 <label>National Park, Forest, Monument or BLM area:</label>
-<input type="text" name="park"><br>
+<input type="text" name="trip[park]"><br>
 
 <label>Campground Name:</label>
-<input type="text" name="camground"><br>
+<input type="text" name="trip[camground]"><br>
 
 <label>Notes:(Optional but recommended)</label>
 <p>Feel free to write a brief review of your experience. Love it or hate it? Did the park and/or campground have any special views, amenities, sites, or other features?</p>
-<input type="text" name="notes"><br>
+<input type="text" name="trip[notes]"><br>
 
 <input type="submit" value="Submit Entry">
 </form>
