@@ -4,19 +4,19 @@
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Edit Trip Date:</label>
     <br>
-    <input type="text" name ="trip[date_camped]" id="date_camped" value="<%= @trip.date_camped %>"><br>
+    <input type="text" name ="date_camped" id="date_camped" value="<%= @trip.date_camped %>"><br>
 
     <label>Edit Park Name:</label>
     <br>
-    <input type="text" name ="trip[park]" id="park_name" value="<%= @trip.park %>"><br>
+    <input type="text" name ="park" id="park_name" value="<%= @trip.park %>"><br>
 
      <label>Edit Campground Name:</label>
     <br>
-    <input type="text" name ="trip[campground]" id="campground_name" value="<%= @trip.campground %>"><br>
+    <input type="text" name ="campground" id="campground_name" value="<%= @trip.campground %>"><br>
 
      <label>Edit Notes:</label>
     <br>
-    <input type="text" name ="trip[notes]" id="notes" value="<%= @trip.notes %>"><br>
+    <input type="text" name ="notes" id="notes" value="<%= @trip.notes %>"><br>
 
 <input type="submit" value="Edit Entry">
 </form>
