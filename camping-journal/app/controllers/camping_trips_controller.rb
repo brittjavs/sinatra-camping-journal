@@ -55,6 +55,7 @@ class CampingTripsController < ApplicationController
         @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
             @trip.update(params[:trip])
+            binding.pry
             redirect to "/trips/#{@trip.id}"
             end
         else
@@ -64,10 +65,9 @@ class CampingTripsController < ApplicationController
 
     delete '/trips/:id' do
         if logged_in?
-            binding.pry
             @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
-                @trip.delete
+                @trip.destroy
                 redirect to '/trips'
             end
         else
