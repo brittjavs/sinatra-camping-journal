@@ -10,6 +10,7 @@ class CampersController < ApplicationController
     end
 
     post '/signup' do
+        binding.pry
         if params[:camper].empty? #will need revision, should i check params or validate in model?
             redirect to '/signup'
         else
@@ -39,9 +40,11 @@ class CampersController < ApplicationController
 
     get '/logout' do
         if logged_in?
-            session.clear
-            redirect to '/'
+          session.clear
+          redirect to '/'
+        else
+          redirect to '/login'
         end
-    end
+      end
     
 end

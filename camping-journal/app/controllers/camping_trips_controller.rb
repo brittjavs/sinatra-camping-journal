@@ -62,6 +62,7 @@ class CampingTripsController < ApplicationController
 
     delete '/trips/:id' do
         if logged_in?
+            binding.pry
             @trip = CampingTrip.find_by(params[:id])
             if current_user.id == @trip.camper_id
                 @trip.delete
