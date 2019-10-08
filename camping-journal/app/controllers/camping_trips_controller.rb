@@ -19,7 +19,6 @@ class CampingTripsController < ApplicationController
 
     post '/trips' do
         if logged_in?
-            binding.pry
             @trip = CampingTrip.create(params[:trip])
             @trip.camper_id = current_user.id
             @trip.save
@@ -31,8 +30,7 @@ class CampingTripsController < ApplicationController
 
     get '/trips/:id' do
         if logged_in?
-            @trip = CampingTrip.find_by(params[:id])
-            binding.pry
+            @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
                 erb :"/camping_trips/show_trip"
             end
@@ -43,7 +41,7 @@ class CampingTripsController < ApplicationController
 
     get '/trips/:id/edit' do
         if logged_in?
-            @trip = CampingTrip.find_by(params[:id])
+            @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
             erb :"/camping_trips/edit_trip"
             end
@@ -54,10 +52,9 @@ class CampingTripsController < ApplicationController
 
     patch '/trips/:id' do
         if logged_in?
-        @trip = CampingTrip.find_by(params[:id])
-            if current_user.id == @trip.camper_id
-                binding.pry
-            @trip.update(params)
+        @trip = CampingTrip.find_by_id(params[:id])
+            if @trip.camper_id == current_user.id
+            @trip.update(params[:trip])
             redirect to "/trips/#{@trip.id}"
             end
         else
