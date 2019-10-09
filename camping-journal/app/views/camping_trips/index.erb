@@ -1,28 +1,23 @@
   <h1> CampTales </h1>
-  <h2> <%=@camper.username%>'s Camping Journal Entries'</h2>
+  <h2> <%= current_user.username %>'s Journal</h2>
+  <h3> Journal Entries </h3>
   <ul>
-  <%@trips.each do |trip|%>
-  <%if trip.visited == true%>
+<%if visited?%>
   <li>
-  <%=trip.date_camped%>
-  <%=trip.park%>
-  <%=trip.campground%>
-  <%=trip.notes%>
+  <%=@trip_taken.date_camped%>
+  <%=@trip_taken.park%>
+  <%=@trip_taken.campground%>
+  <%=@trip_taken.notes%>
   </li>
   <%end%>
-  <%end%>
-</ul>
-
- <h2> Camping Bucket List</h2>
- <ul>
-  <%@trips.each do |trip|%>
-  <%if trip.visited == false%>
+  
+  <h3> Camping Bucket List</h3>
+  <ul>
+<%if not_visited?%>
   <li>
-  <%=trip.date_camped%>
-  <%=trip.park%>
-  <%=trip.campground%>
-  <%=trip.notes%>
+  <%=@trip_not_taken.park%>
+  <%=@trip_not_taken.campground%>
+  <%=@trip_not_taken.notes%>
   </li>
-  <%end%>
   <%end%>
 </ul>

@@ -2,7 +2,6 @@ require 'pry'
 class CampingTripsController < ApplicationController
     get '/trips' do
         if logged_in?
-            @trips = current_user.camping_trips
             erb :"/camping_trips/index"
         else
             redirect to '/login'
@@ -55,7 +54,6 @@ class CampingTripsController < ApplicationController
         @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
             @trip.update(params[:trip])
-            binding.pry
             redirect to "/trips/#{@trip.id}"
             end
         else
