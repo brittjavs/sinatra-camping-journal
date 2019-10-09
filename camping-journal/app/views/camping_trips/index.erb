@@ -1,11 +1,28 @@
-  <h1> Welcome <%=@camper.username%>, </h1>
+  <h1> CampTales </h1>
+  <h2> <%=@camper.username%>'s Camping Journal Entries'</h2>
   <ul>
   <%@trips.each do |trip|%>
+  <%if trip.visited == true%>
   <li>
   <%=trip.date_camped%>
   <%=trip.park%>
   <%=trip.campground%>
   <%=trip.notes%>
   </li>
+  <%end%>
+  <%end%>
+</ul>
+
+ <h2> Camping Bucket List</h2>
+ <ul>
+  <%@trips.each do |trip|%>
+  <%if trip.visited == false%>
+  <li>
+  <%=trip.date_camped%>
+  <%=trip.park%>
+  <%=trip.campground%>
+  <%=trip.notes%>
+  </li>
+  <%end%>
   <%end%>
 </ul>
