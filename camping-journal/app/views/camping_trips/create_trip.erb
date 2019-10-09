@@ -10,8 +10,22 @@
 <input type="text" name="trip[campground]"><br>
 
 <label>Notes:(Optional but encouraged)</label><br>
-<p>Feel free to write a brief review of your experience. Love it or hate it? Did the park and/or campground have any special views, amenities, sites, or other features?</p>
+<p>Feel free to write a brief review of your experience. 
+(Love it or hate it? Did the park and/or campground have any special views, amenities, sites, or other features?)</p>
 <input type="textarea" name="trip[notes]"><br>
+
+<p>Select where you would like to store this entry:</p>
+
+<div>
+  <input type="radio" id="visited" name="trip[visited]" value="true"
+         checked>
+  <label for="visited">Already Camped Here/Add to Journal</label>
+</div>
+
+<div>
+  <input type="radio" id="not_visited" name="trip[visited]" value="false">
+  <label for="not_visited">Add to Camping Wish List</label>
+</div>
 
 <input type="submit" value="Submit Entry">
 </form>
