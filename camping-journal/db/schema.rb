@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191006191811) do
+ActiveRecord::Schema.define(version: 20191009032109) do
 
   create_table "campers", force: :cascade do |t|
     t.string "email"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20191006191811) do
     t.string  "campground"
     t.string  "notes"
     t.integer "camper_id"
+    t.boolean "visited",     default: true
   end
 
 end
