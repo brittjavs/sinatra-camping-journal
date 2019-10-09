@@ -18,5 +18,17 @@
     <br>
     <input type="text" name ="trip[notes]" id="notes" value="<%= @trip.notes %>"><br>
 
+    <p>Select where you would like to store this entry:</p>
+
+    <div>
+    <input type="radio" id="visited" name="trip[visited]" value="true" checked>
+    <label for="visited">Already Camped Here/Add to Journal</label>
+    </div>
+
+    <div>
+    <input type="radio" id="not_visited" name="trip[visited]" value="false">
+    <label for="not_visited">Add to Camping Wish List</label>
+    </div>
+
 <input type="submit" value="Edit Entry">
 </form>
