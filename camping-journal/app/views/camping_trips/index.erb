@@ -11,14 +11,13 @@
   </li>
   <%end%>
   
+  <div class="sidebar">
   <h3> Camping Bucket List</h3>
   <ul>
   <%@bucketlist.each do |item|%>
   <li>
-  <%=item.park%>
-  <%=item.campground%>
-  <%=item.notes%>
+  <%=item.park%> - <%=item.campground%>
   </li>
   <%end%>
- 
 </ul>
+</div>
