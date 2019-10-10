@@ -2,6 +2,8 @@ require 'pry'
 class CampingTripsController < ApplicationController
     get '/trips' do
         if logged_in?
+            @trips = current_user.camping_trips.where(visited: true)
+            @bucketlist = current_user.camping_trips.where(visited: false)
             erb :"/camping_trips/index"
         else
             redirect to '/login'
