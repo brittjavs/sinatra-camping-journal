@@ -5,10 +5,9 @@
 </section>
 <section class="row">
 <div class="grid">
-<%=@trip.date_camped%>
-<%=@trip.park%>
-<%=@trip.campground%>
-<%=@trip.notes%>
+<h4><%=@trip.date_camped%></h4>
+PARK: <%=@trip.park%> CAMPGROUND: <%=@trip.campground%><br>
+NOTES: <%=@trip.notes%><br>
 
 <form method="POST" action="/trips/<%= @trip.id %>/delete">
   <input type = "hidden" name="_method" value="delete">

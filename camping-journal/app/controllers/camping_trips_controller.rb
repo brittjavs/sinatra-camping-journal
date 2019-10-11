@@ -55,11 +55,14 @@ class CampingTripsController < ApplicationController
         if logged_in?
         @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
-            @trip.update(params[:trip])
-            redirect to "/trips/#{@trip.id}"
+                if @trip.update(params[:trip])
+                redirect to "/trips/#{@trip.id}"
+                else
+                redirect to "/trips/#{@trip.id}/edit"
+                end
+            else
+             redirect to '/login'
             end
-        else
-            redirect to '/login'
         end
     end
 
