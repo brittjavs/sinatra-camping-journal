@@ -1,7 +1,6 @@
-html, body, div,
-h1, h2, h3, h4, h5, h6, p, 
-a, em, img, ol, ul, li,
-form,footer, header, nav, ruby, section {
+html, body, div,h1, h2, h3, h4, h5, h6, p, blockquote, 
+a, em, img, small, strong, ol, ul, li,
+form, footer, header, nav, ruby, section{
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,6 +9,7 @@ form,footer, header, nav, ruby, section {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 footer, header, nav, section {
   display: block;
 }
@@ -19,10 +19,18 @@ body {
 ol, ul {
   list-style: none;
 }
-
 li {
-  padding: 11px 15px;
-  border-bottom: 1px solid #ccc;
+    padding: 11px 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
 
 /*
@@ -50,10 +58,14 @@ body {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-
+.container,
 .grid {
   margin: 0 auto;
   width: 960px;
+}
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .grid {
   padding-left: 15px;
@@ -62,16 +74,43 @@ body {
 
 /*
   ========================================
+  Clearfix
+  ========================================
+*/
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/*
+  ========================================
   Rows
   ========================================
 */
 
-.row {
+.row,
+.row-alt {
   min-width: 960px;
 }
 .row {
   background: #fff;
   padding: 66px 0 44px 0;
+}
+.row-alt {
+  background: #cbe2c1;
+  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background:    -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background:         linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 44px 0 22px 0;
 }
 
 /*
@@ -106,6 +145,10 @@ h5 {
   font-weight: 400;
   text-transform: uppercase;
 }
+strong {
+  font-weight: 400;
+}
+
 
 /*
   ========================================
@@ -131,7 +174,9 @@ a {
   color: #648880;
   text-decoration: none;
 }
-
+a:hover {
+  color: #a9b2b9;
+}
 p a {
   border-bottom: 1px solid #dfe2e5;
 }
@@ -145,6 +190,7 @@ p a {
 }
 
 /*
+
   ========================================
   Primary header
   ========================================
@@ -207,41 +253,3 @@ p a {
 }
 
 /*
-  ========================================
-  Home
-  ========================================
-*/
-
-.hero {
-  color: #fff;
-  line-height: 44px;
-  padding: 22px 80px 66px 80px;
-  text-align: center;
-}
-.hero h2 {
-  font-size: 36px;
-}
-.hero p {
-  font-size: 24px;
-  font-weight: 100;
-}
-.teaser a:hover h3 {
-  color: #a9b2b9;
-}
-
-/*
-  ========================================
-  Speakers
-  ========================================
-*/
-
-.speaker {
-  margin-bottom: 44px;
-}
-.speaker-info {
-  border: 1px solid #dfe2e5;
-  border-radius: 5px;
-  margin-top: 88px;
-  padding: 22px 0;
-  text-align: center;
-}

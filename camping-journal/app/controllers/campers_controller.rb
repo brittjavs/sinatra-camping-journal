@@ -10,7 +10,7 @@ class CampersController < ApplicationController
     end
 
     post '/signup' do
-        if params[:camper].empty? #will need revision, should i check params or validate in model?
+        if params[:camper].empty?
             redirect to '/signup'
         else
             @camper = Camper.create(params[:camper])

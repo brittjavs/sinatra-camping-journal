@@ -15,11 +15,12 @@
   </head>
   <body>
   
-  <header>
+  <header class="primary-header container group">
 
-      <h1 class="logo">CampTales</h1>
+      <h1 class="logo"><a href="/trips">CampTales</a></h1>
 
       <h3 class="tagline">A Camping Journal App</h3>
+
       <%if logged_in?%>
       <nav class="nav primary-nav">
         <ul>
@@ -32,11 +33,9 @@
 
     </header>
 
-    <div class="wrapper">
-
         <%= yield %>
 
-      <footer class="branding">
+     <footer class="primary-footer container group">
         <small>&copy; 2019 <strong>CampTales</strong></small>
       </footer>
     </div>
