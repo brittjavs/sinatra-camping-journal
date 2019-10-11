@@ -10,12 +10,12 @@ class CampersController < ApplicationController
     end
 
     post '/signup' do
-        if params[:camper].empty?
-            redirect to '/signup'
-        else
             @camper = Camper.create(params[:camper])
+            if @camper.save
             session[:user_id] = @camper.id
             redirect to '/trips'
+            else
+            redirect to "/signup"
         end
     end
 
