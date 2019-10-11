@@ -8,9 +8,10 @@
     <ul>
       <%@trips.each do |trip|%>
       <li>
-      DATE CAMPED: <%=trip.date_camped%> - 
+      <h4> <%=trip.date_camped%> </h4>
       PARK: <%=trip.park%> CAMPGROUND <%=trip.campground%><br>
-      NOTES: <%=trip.notes%>
+      NOTES: <%=trip.notes%><br>
+      <a href="/trips/#{trip.id}/edit">Edit</a>
       </li><br>
       <%end%>
     </ul>

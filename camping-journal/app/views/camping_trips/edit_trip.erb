@@ -1,3 +1,4 @@
+<section class="row">
 <h1>Update Entry</h1>
 
 <form action="/trips/<%= @trip.id %>" method="POST">
@@ -27,8 +28,9 @@
 
     <div>
     <input type="radio" id="not_visited" name="trip[visited]" value="false">
-    <label for="not_visited">Add to Camping Wish List</label>
+    <label for="not_visited">Add to Camping Bucket List</label>
     </div>
 
 <input type="submit" value="Edit Entry">
 </form>
+</section>

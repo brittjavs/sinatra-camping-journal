@@ -1,19 +1,20 @@
+<section class="row">
 <h1> Add a new entry to your journal </h1>
 <form action="/trips" method="POST">
 <label>Date Camped:</label>
 <input type="text" name="trip[date_camped]"><br>
-
+<br>
 <label>National Park, Forest, Monument or BLM area:</label>
 <input type="text" name="trip[park]"><br>
-
+<br>
 <label>Campground Name:</label>
 <input type="text" name="trip[campground]"><br>
-
+<br>
 <label>Notes:(Optional but encouraged)</label><br>
 <p>Feel free to write a brief review of your experience. 
 (Love it or hate it? Did the park and/or campground have any special views, amenities, sites, or other features?)</p>
 <input type="textarea" name="trip[notes]"><br>
-
+<br>
 <p>Select where you would like to store this entry:</p>
 
 <div>
@@ -24,10 +25,11 @@
 
 <div>
   <input type="radio" id="not_visited" name="trip[visited]" value="false">
-  <label for="not_visited">Add to Camping Wish List</label>
+  <label for="not_visited">Add to Camping Bucket List</label>
 </div>
 
 <input type="submit" value="Submit Entry">
 </form>
+</section>
 
 
