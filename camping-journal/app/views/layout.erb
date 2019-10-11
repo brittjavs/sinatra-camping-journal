@@ -11,9 +11,27 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/new_main.css" />
   </head>
   <body>
+  
+  <header class="primary-header container group">
+
+      <h1 class="logo">CampTales</h1>
+
+      <h3 class="tagline">A Camping Journal App</h3>
+      <%if logged_in?%>
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="/trips">Home</a></li>
+          <li><a href="/trips/new">New Entry</a>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+      <%end%>
+
+    </header>
+
     <div class="wrapper">
 
         <%= yield %>

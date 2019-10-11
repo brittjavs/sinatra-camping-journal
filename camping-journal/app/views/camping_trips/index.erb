@@ -1,23 +1,27 @@
-  <h1> CampTales </h1>
+<section class="hero container">
   <h2> <%= current_user.username %>'s Journal</h2>
-  <h3> Journal Entries </h3>
-  <ul>
-  <%@trips.each do |trip|%>
-  <li>
-  <%=trip.date_camped%>
-  <%=trip.park%>
-  <%=trip.campground%>
-  <%=trip.notes%>
-  </li>
-  <%end%>
-  
-  <div class="sidebar">
+</section>
+
+<section class="row">
+  <div class="grid">
+    <h3> Journal Entries </h3>
+    <ul>
+      <%@trips.each do |trip|%>
+      <li>
+      DATE CAMPED: <%=trip.date_camped%> - 
+      PARK: <%=trip.park%> CAMPGROUND <%=trip.campground%><br>
+      NOTES: <%=trip.notes%>
+      </li><br>
+      <%end%>
+    </ul>
+  <br>
   <h3> Camping Bucket List</h3>
   <ul>
-  <%@bucketlist.each do |item|%>
-  <li>
-  <%=item.park%> - <%=item.campground%>
-  </li>
-  <%end%>
-</ul>
+    <%@bucketlist.each do |item|%>
+    <li>
+    <%=item.park%> - <%=item.campground%>
+    </li>
+    <%end%>
+  </ul>
 </div>
+</section>
