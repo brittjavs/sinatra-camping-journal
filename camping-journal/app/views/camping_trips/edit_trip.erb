@@ -1,6 +1,9 @@
-<section class="row">
+<section class="hero container">
 <h1>Update Entry</h1>
+</section>
 
+<section class="row">
+<div class="grid">
 <form action="/trips/<%= @trip.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Edit Trip Date:</label>
@@ -33,4 +36,5 @@
 
 <input type="submit" value="Edit Entry">
 </form>
+</div>
 </section>

@@ -1,4 +1,8 @@
+<section class="hero container">
 <h1> Your Journal Entry </h1>
+</section>
+<section class="row">
+<div class="grid">
 <%=@trip.date_camped%>
 <%=@trip.park%>
 <%=@trip.campground%>
@@ -8,3 +12,5 @@
   <input type = "hidden" name="_method" value="delete">
   <input type="submit" value="Delete Entry">
 </form>
+</div>
+</section>
