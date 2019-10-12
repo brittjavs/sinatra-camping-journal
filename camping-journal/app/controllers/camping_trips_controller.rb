@@ -22,8 +22,11 @@ class CampingTripsController < ApplicationController
         if logged_in?
             @trip = CampingTrip.create(params[:trip])
             @trip.camper_id = current_user.id
-            @trip.save
-            redirect to "/trips/#{@trip.id}"
+                if @trip.save
+                redirect to "/trips/#{@trip.id}"
+                else
+                redirect to "/trips/new"
+                end
         else
             redirect to '/login'
         end
