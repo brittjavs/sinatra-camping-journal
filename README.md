@@ -3,6 +3,12 @@ This app allows a user to sign up for a journal account. They can log in/out, an
 
 # Usage
 Clone the repository to your environment. 
-Run 'bundle install' to install all the gems required for the application. 
-Next run 'rake db:migrate'. 
-Run 'shotgun' and cmd+click the link to open the applicaiton in your browser.
+Run the following :
+```
+$ bundle install
+```
+```rake db:migrate```
+
+```shotgun```
+ 
+ Next cmd+click the link to open the applicaiton in your browser.
