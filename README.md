@@ -9,7 +9,9 @@ Run the following :
 ```
 bundle install
 ```
-```rake db:migrate```
+```cd sinatra-camping-journal```
+
+```cd camping-journal```
 
 ```shotgun```
  
