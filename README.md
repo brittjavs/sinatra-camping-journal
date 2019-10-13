@@ -13,6 +13,21 @@ bundle install
 
 ```cd camping-journal```
 
+```rake db:migrate```
+
 ```shotgun```
  
  Next cmd+click the link to open the applicaiton in your browser.
+ 
+ ## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/'bjavalera'/sinatra-camping-journal. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The application is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the SinatraCampingJournal project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'bjavalera'/sinatra-camping-journal/blob/master/CODE_OF_CONDUCT.md).
+
