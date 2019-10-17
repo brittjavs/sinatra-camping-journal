@@ -1,8 +1,14 @@
 require 'pry'
 class CampingTripsController < ApplicationController
     get '/trips' do
-        if logged_in?
-            @trips = current_user.camping_trips.where(visited: true)
+        if logged_in? 
+            @query = params[:query]
+            if @query
+                @trips = current_user.camping_trips.where(visited: true).where('park LIKE ?', "%#{@query}%")
+
+            else
+                @trips = current_user.camping_trips.where(visited: true)
+            end
             @bucketlist = current_user.camping_trips.where(visited: false)
             erb :"/camping_trips/index"
         else
