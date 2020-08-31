@@ -1,9 +1,17 @@
 # CampTales - A Camping Trip Journal 
-This app allows a user to sign up for a journal account. They can log in/out, and create entries for a camping trip or add a park and campground to a bucket list using a form. They can view each entry individually if they choose an entry from the index, as well as edit and delete entries.
+CampTales is an MVC Ruby/Sinatra Application that uses ActiveRecord. It was created for adventurers who would like to keep track of their camping experiences.
 
-This is an MVC Sinatra App that uses ActiveRecord
+## User Story
+A user can:
+* Sign up for a journal account
+* Log in and log out of their account
+* Create entries for a camping trip using a form
+* Add a park and campground to a bucket list through a form
+* View individual entries by choosing from entry index
+* Edit entries
+* Delete entries
 
-# Usage
+## Usage
 Clone the repository to your environment. 
 Run the following :
 ```
@@ -17,7 +25,7 @@ bundle install
 
 ```shotgun```
  
- Next cmd+click the link to open the applicaiton in your browser.
+ Next, cmd+click the link in the terminal to open the application in your browser.
  
  ## Contributing
 
