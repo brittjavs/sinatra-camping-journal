@@ -1,42 +1,40 @@
-<section class="row-alt">
-  <div class="lead container">
-<h1>Update Entry</h1>
-</div>
+<section class="title-row">
+  <div class="title-container">
+    <h1>Update Entry</h1>
+  </div>
 </section>
 
-<section class="row">
-<div class="grid">
-<form action="/trips/<%= @trip.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label>Edit Trip Date:</label>
-    <br>
-    <input type="text" name ="trip[date_camped]" id="date_camped" value="<%= @trip.date_camped %>"><br>
+<main class="edit-page">
+  <div class="edit-form">
+    <form action="/trips/<%= @trip.id %>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label>Edit Trip Date:</label>
+      <br>
+      <input type="text" name ="trip[date_camped]" id="date_camped" value="<%= @trip.date_camped %>">
+      <br>
+      <label>Edit Park Name:</label>
+      <br>
+      <input type="text" name ="trip[park]" id="park_name" value="<%= @trip.park %>">
+      <br>
+      <label>Edit Campground Name:</label>
+      <br>
+      <input type="text" name ="trip[campground]" id="campground_name" value="<%= @trip.campground %>">
+      <br>
+      <label>Edit Notes:</label>
+      <br>
+      <textarea rows="8" cols="50" name ="trip[notes]" id="notes"><%= @trip.notes %></textarea>
+      <br>
+      
+      <p>Select where you would like to store this entry:</p>
+      <div class="radio-buttons">
+        <input type="radio" id="visited" name="trip[visited]" value="true" checked>
+        <label for="visited">Already Camped Here/Add to Journal</label>
 
-    <label>Edit Park Name:</label>
-    <br>
-    <input type="text" name ="trip[park]" id="park_name" value="<%= @trip.park %>"><br>
+        <input type="radio" id="not_visited" name="trip[visited]" value="false">
+        <label for="not_visited">Add to Camping Bucket List</label>
+      </div>
 
-     <label>Edit Campground Name:</label>
-    <br>
-    <input type="text" name ="trip[campground]" id="campground_name" value="<%= @trip.campground %>"><br>
-
-     <label>Edit Notes:</label>
-    <br>
-    <textarea rows="8" cols="50" name ="trip[notes]" id="notes"><%= @trip.notes %></textarea><br>
-
-    <p>Select where you would like to store this entry:</p>
-
-    <div>
-    <input type="radio" id="visited" name="trip[visited]" value="true" checked>
-    <label for="visited">Already Camped Here/Add to Journal</label>
-    </div>
-
-    <div>
-    <input type="radio" id="not_visited" name="trip[visited]" value="false">
-    <label for="not_visited">Add to Camping Bucket List</label>
-    </div>
-
-<input type="submit" value="Edit Entry">
-</form>
-</div>
-</section>
+      <input type="submit" value="Edit Entry">
+    </form>
+  </div>
+</main>

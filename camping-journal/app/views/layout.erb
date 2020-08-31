@@ -15,14 +15,13 @@
   </head>
   <body>
   
-  <header class="primary-header container group">
-
-      <h1 class="logo"><a href="/trips">CampTales</a></h1>
-
+  <header class="header-container">
+    <div class="logo">
+      <h1 class="app-name"><a href="/trips">CAMPTALES</a></h1>
       <h3 class="tagline">A Camping Journal App</h3>
 
       <%if logged_in?%>
-      <nav class="nav primary-nav">
+      <nav class="navbar">
         <ul>
           <li><a href="/trips">Home</a></li>
           <li><a href="/trips/new">New Entry</a>
@@ -35,7 +34,7 @@
 
         <%= yield %>
 
-     <footer class="primary-footer container group">
+     <footer class="primary-footer container">
         <small>&copy; 2019 <strong>CampTales</strong></small>
       </footer>
     </div>

@@ -204,7 +204,6 @@ p a {
 */
 
 .logo {
-  border-top: 4px solid #648880;
   float: left;
   font-size: 48px;
   font-weight: normal;
@@ -225,7 +224,6 @@ p a {
   letter-spacing: .5px;
   text-transform: uppercase;
 }
-
 /*
   ========================================
   Primary footer
@@ -254,11 +252,13 @@ p a {
 }
 .nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0;
   vertical-align: top;
 }
-.nav li:last-child {
-  margin-right: 0;
+
+.nav.primary-nav a{
+  background-color:#648880;
+  padding: 10px;
 }
 
 /*

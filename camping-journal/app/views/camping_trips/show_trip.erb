@@ -1,17 +1,19 @@
-<section class="row-alt">
-  <div class="lead container">
-<h1> Your Journal Entry </h1>
+<section class="title-row">
+  <div class="title-container">
+    <h1> Your Journal Entry </h1>
   </div>
 </section>
-<section class="row">
-<div class="grid">
-<h4><%=@trip.date_camped%></h4>
-PARK: <%=@trip.park%> CAMPGROUND: <%=@trip.campground%><br>
-NOTES: <%=@trip.notes%><br>
 
-<form method="POST" action="/trips/<%= @trip.id %>/delete">
+<main class="show-trip-page">
+<div class="single-trip">
+  <h4><%=@trip.date_camped%></h4>
+  PARK: <%=@trip.park%> CAMPGROUND: <%=@trip.campground%><br>
+  NOTES: <%=@trip.notes%><br>
+
+  <form method="POST" action="/trips/<%= @trip.id %>/delete">
   <input type = "hidden" name="_method" value="delete">
   <input type="submit" value="Delete Entry">
-</form>
+  </form>
 </div>
-</section>
+
+</main>
