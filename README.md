@@ -14,12 +14,14 @@ A user can:
 ## Usage
 Clone the repository to your environment. 
 Run the following :
-```
-bundle install
-```
+
 ```cd sinatra-camping-journal```
 
 ```cd camping-journal```
+
+```
+bundle install
+```
 
 ```rake db:migrate```
 
