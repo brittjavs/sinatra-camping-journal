@@ -46,12 +46,6 @@ header{
   font-size: 21px
 }
 
-footer{
-  margin-top: 50px;
-  color: white;
-  font-weight: 700;
-}
-
 .container{
   background: #648880;
   padding: 50px;
@@ -81,7 +75,7 @@ h2{
 
 .form input{
   margin-top: 15px;
-  width: 60%;
+  /* width: 80%; */
   height: 30px;
 }
 
@@ -127,9 +121,29 @@ h2{
   font-size: 36px;
   font-weight: 700;
 }
+
 main{
-  background-color: white;
   width: 100%;
+  background-color: white;
   text-align: center;
-  align-content: right;
+}
+
+.search-container{
+  padding: 20px;
+}
+
+form .search-bar{
+  width: 50%;
+  height: 30px;
+}
+
+form label{
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+footer{
+  margin-top: 50px;
+  color: white;
+  font-weight: 700;
 }
