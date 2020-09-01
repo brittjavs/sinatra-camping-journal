@@ -68,7 +68,7 @@ h2{
   background-color: white;
   border: none;
   height: 50px;
-  width: 80px;
+  width: 30%;
   border-radius: 5px;
   margin: 20px 5px;
 }
@@ -76,6 +76,24 @@ h2{
 .welcome button a{
   color: #648880;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.form input{
+  margin-top: 15px;
+  width: 60%;
+  height: 30px;
+}
+
+.form input.button{
+  width: 40%;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: white;
+  color: #648880;
+  border: none;
+  border-radius: 5px;
 }
 

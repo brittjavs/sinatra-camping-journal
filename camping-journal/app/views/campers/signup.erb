@@ -1,18 +1,17 @@
-<main class="form-container">
-  <div class="title-row">
+<main class="container">
     <h1>Sign up to create your camping journal</h1>
-  </div>
-  <div class="signup-form">
+  <div class="signup form">
     <form method="POST" action="/signup">
-      <label>Username: </label>
-      <input type="text" name="camper[username]"><br>
 
-      <label>Email: </label>
+      <label>Email  </label>
       <input type="text" name="camper[email]"><br>
 
-      <label>Password: </label>
+      <label>Username </label>
+      <input type="text" name="camper[username]"><br>
+
+      <label>Password  </label>
       <input type="text" name="camper[password]"><br>
-      <input type="submit" value="Sign Up">
+      <input class="button" type="submit" value="Sign Up">
     </form>
   </div>
 </main>
