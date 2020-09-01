@@ -1,44 +1,39 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> 
+
 <html class="no-js" lang="en"> 
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
     <title>Camping Journal</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-  
-  <header class="header-container">
-    <div class="logo">
-      <h1 class="app-name"><a href="/trips">CAMPTALES</a></h1>
-      <h3 class="tagline">A Camping Journal App</h3>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <h1 class="app-name"><a href="/trips">CAMPTALES</a></h1>
+          <h3 class="tagline">A Camping Journal App</h3>
+        </div>
+        <%if logged_in%>
+        <nav class="navbar">
+          <ul>
+            <li><a href="/trips">Home</a></li>
+            <li><a href="/trips/new">New Entry</a>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+        <%end%>
+      </header>
 
-      <%if logged_in?%>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/trips">Home</a></li>
-          <li><a href="/trips/new">New Entry</a>
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </nav>
-      <%end%>
+      <%= yield %>
 
-    </header>
-
-        <%= yield %>
-
-     <footer class="primary-footer container">
-        <small>&copy; 2019 <strong>CampTales</strong></small>
+     <footer class="footer">
+        <small>&copy; 2019 <strong>CAMPTALES</strong> by BRITTANY JAVALERA</small>
       </footer>
     </div>
-
   </body>
 </html>

@@ -2,7 +2,7 @@ require 'pry'
 class CampersController < ApplicationController
 
     get '/signup' do
-        if logged_in?
+        if logged_in
             redirect to '/trips'
         else
         erb :"/campers/signup"
@@ -20,7 +20,7 @@ class CampersController < ApplicationController
     end
 
     get '/login' do
-        if logged_in?
+        if logged_in
             redirect to '/trips'
         else
         erb :"/campers/login"
@@ -38,7 +38,7 @@ class CampersController < ApplicationController
     end
 
     get '/logout' do
-        if logged_in?
+        if logged_in
           session.clear
           redirect to '/'
         else

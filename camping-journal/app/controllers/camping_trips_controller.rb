@@ -1,7 +1,7 @@
 require 'pry'
 class CampingTripsController < ApplicationController
     get '/trips' do
-        if logged_in? 
+        if logged_in 
             @query = params[:query]
             if @query
                 @trips = current_user.camping_trips.where(visited: true).where('park LIKE ?', "%#{@query}%")
@@ -17,7 +17,7 @@ class CampingTripsController < ApplicationController
     end
 
     get '/trips/new' do
-        if logged_in?
+        if logged_in
         erb :"/camping_trips/create_trip"
         else
             redirect to '/login'
@@ -25,7 +25,7 @@ class CampingTripsController < ApplicationController
     end
 
     post '/trips' do
-        if logged_in?
+        if logged_in
             @trip = CampingTrip.create(params[:trip])
             @trip.camper_id = current_user.id
                 if @trip.save
@@ -39,7 +39,7 @@ class CampingTripsController < ApplicationController
     end
 
     get '/trips/:id' do
-        if logged_in?
+        if logged_in
             @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
                 erb :"/camping_trips/show_trip"
@@ -50,7 +50,7 @@ class CampingTripsController < ApplicationController
     end
 
     get '/trips/:id/edit' do
-        if logged_in?
+        if logged_in
             @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
             erb :"/camping_trips/edit_trip"
@@ -61,7 +61,7 @@ class CampingTripsController < ApplicationController
     end
 
     patch '/trips/:id' do
-        if logged_in?
+        if logged_in
         @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
                 if @trip.update(params[:trip])
@@ -76,7 +76,7 @@ class CampingTripsController < ApplicationController
     end
 
     delete '/trips/:id/delete' do
-        if logged_in?
+        if logged_in
             @trip = CampingTrip.find_by_id(params[:id])
             if @trip.camper_id == current_user.id
                 @trip.destroy
