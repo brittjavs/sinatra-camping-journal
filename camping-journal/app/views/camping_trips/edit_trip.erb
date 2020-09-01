@@ -5,7 +5,7 @@
 </section>
 
 <main class="edit-page">
-  <div class="edit-form">
+  <div class="edit form">
     <form action="/trips/<%= @trip.id %>" method="POST">
       <input id="hidden" type="hidden" name="_method" value="patch">
       <label>Edit Trip Date:</label>
@@ -34,7 +34,7 @@
         <label for="not_visited">Add to Camping Bucket List</label>
       </div>
 
-      <input type="submit" value="Edit Entry">
+      <input class="button" type="submit" value="Edit Entry">
     </form>
   </div>
 </main>

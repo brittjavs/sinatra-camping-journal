@@ -132,9 +132,10 @@ main{
   padding: 20px;
 }
 
-form .search-bar{
-  width: 50%;
+.searchbar input {
+  width: 30%;
   height: 30px;
+  margin: 0 auto;
 }
 
 form label{
