@@ -45,10 +45,14 @@ h3{
   font-weight: 400;
   font-size: 21px
 }
-
+.entries-container h3{
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 h2{
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .welcome button{
@@ -128,7 +132,6 @@ form{
   text-align: center;
 }
 
-
 .page{
   width: 100%;
   background-color: white;
@@ -143,9 +146,29 @@ form{
   color: white;
 }
 
-form label{
+li.trip{
+  border-bottom: gray 1px solid;
+}
+
+form label, textarea{
   font-family: 'Roboto';
   font-weight: 400;
+}
+textarea{
+  color: gray;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.radio-buttons input {
+  width: 25px;
+  height: 18px;
+  margin: 10px 0 20px 0;
+}
+
+.radio-buttons label{
+  margin-right: 15px;
 }
 
 footer{
