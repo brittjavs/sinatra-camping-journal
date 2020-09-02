@@ -1,27 +1,23 @@
-<section class="title row">
+<section class="title-row">
   <div class="title-container">
-    <h1>Update Entry</h1>
+    <h2>Update Entry</h2>
   </div>
 </section>
 
-<main class="edit-page">
+<main class="page">
   <div class="edit form">
     <form action="/trips/<%= @trip.id %>" method="POST">
       <input id="hidden" type="hidden" name="_method" value="patch">
       <label>Edit Trip Date:</label>
-      <br>
-      <input type="text" name ="trip[date_camped]" id="date_camped" value="<%= @trip.date_camped %>">
+      <input type="text" name ="trip[date_camped]" id="date_camped" value="<%= @trip.date_camped %>"><br>
       <br>
       <label>Edit Park Name:</label>
-      <br>
-      <input type="text" name ="trip[park]" id="park_name" value="<%= @trip.park %>">
+      <input type="text" name ="trip[park]" id="park_name" value="<%= @trip.park %>"><br>
       <br>
       <label>Edit Campground Name:</label>
-      <br>
-      <input type="text" name ="trip[campground]" id="campground_name" value="<%= @trip.campground %>">
+      <input type="text" name ="trip[campground]" id="campground_name" value="<%= @trip.campground %>"><br>
       <br>
       <label>Edit Notes:</label>
-      <br>
       <textarea rows="8" cols="50" name ="trip[notes]" id="notes"><%= @trip.notes %></textarea>
       <br>
       

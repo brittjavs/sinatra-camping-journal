@@ -4,8 +4,8 @@
   </div>
 </section>
 
-<main class="index">
-  <div class="search-container">
+<main class="page">
+  <div class="search-container form">
     <form class="search-bar" method="GET" action="/trips">
     <input type="text" name="query">
     <input class="button" type="submit" value="Search">
@@ -15,12 +15,15 @@
     <h3> Journal Entries </h3>
     <ul>
       <%@trips.each do |trip|%>
-      <li>
-      <h4> <%=trip.date_camped%> </h4>
-      PARK: <%=trip.park%> CAMPGROUND: <%=trip.campground%><br>
-      NOTES: <%=trip.notes%><br>
-      <a href="/trips/<%=trip.id%>">View</a>  |  
-      <a href="/trips/<%=trip.id%>/edit">Edit</a>
+      <li class="trip">
+        <div class="date"> 
+          <h4><%=trip.date_camped%></h4>
+        </div>
+        <div class="trip-details">
+          PARK: <%=trip.park%> CAMPGROUND: <%=trip.campground%><br>
+          NOTES: <%=trip.notes%><br>
+          <a href="/trips/<%=trip.id%>">View</a>  |  <a href="/trips/<%=trip.id%>/edit">Edit</a>
+        </div>
       </li><br>
       <%end%>
     </ul>

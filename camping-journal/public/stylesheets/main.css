@@ -32,7 +32,7 @@ header{
   color: white;
 }
 
-.logo h1{
+h1{
   font-weight: 700;
   font-size: 48px;
 }
@@ -41,21 +41,14 @@ header{
   color: white;
 }
 
-.logo h3{
+h3{
   font-weight: 400;
   font-size: 21px
 }
 
-.container{
-  background: #648880;
-  padding: 50px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-}
-
 h2{
-  font-size: 32px;
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .welcome button{
@@ -73,13 +66,13 @@ h2{
   font-size: 18px;
 }
 
-.form input{
+.auth input{
   margin-top: 15px;
   /* width: 80%; */
   height: 30px;
 }
 
-.form input.button{
+.auth input.button{
   width: 40%;
   text-decoration: none;
   font-weight: 400;
@@ -88,6 +81,24 @@ h2{
   color: #648880;
   border: none;
   border-radius: 5px;
+}
+
+form{
+  margin: 25px 0 25px 0;
+}
+
+.form input{
+  width: 20%;
+  height: 30px;
+  color: gray;
+}
+
+.form input.button{
+  width: 10%;
+  color: white;
+  background-color: #648880;
+  border: none;
+
 }
 
 .navbar {
@@ -117,25 +128,19 @@ h2{
   text-align: center;
 }
 
-h2{
-  font-size: 36px;
-  font-weight: 700;
-}
 
-main{
+.page{
   width: 100%;
   background-color: white;
   text-align: center;
 }
 
-.search-container{
-  padding: 20px;
-}
-
-.searchbar input {
-  width: 30%;
-  height: 30px;
-  margin: 0 auto;
+.container{
+  background: #648880;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
 }
 
 form label{
