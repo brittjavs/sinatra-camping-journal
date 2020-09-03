@@ -11,34 +11,37 @@
     <input class="button" type="submit" value="Search">
     </form>
   </div>
-  <div class="entries-container">
-    <h3> Journal Entries </h3>
-    <ul>
-      <%@trips.each do |trip|%>
-      <li class="trip">
-        <div class="date"> 
-          <h4><%=trip.date_camped%></h4>
-        </div>
-        <div class="trip-details">
-          PARK: <%=trip.park%> CAMPGROUND: <%=trip.campground%><br>
-          NOTES: <%=trip.notes%><br>
-          <a href="/trips/<%=trip.id%>">View</a>  |  <a href="/trips/<%=trip.id%>/edit">Edit</a>
-        </div>
-      </li><br>
-      <%end%>
-    </ul>
-  </div>
-  <div class="bucket-list-container">
-    <h3> Camping Bucket List</h3>
-    <ul>
-      <%@bucketlist.each do |item|%>
-      <li>
-      <%=item.park%> - <%=item.campground%>
-      <br>
-      <a href="/trips/<%=item.id%>/edit">Edit</a>
+  <div class="index-container">
+    <div class="bucket-list">
+      <h3> Camping Bucket List</h3>
+      <ul>
+        <%@bucketlist.each do |item|%>
+        <li>
+        <%=item.park%> - <%=item.campground%>
+        <br>
+        <a href="/trips/<%=item.id%>/edit">Edit</a>
 
-      </li>
-      <%end%>
-    </ul>
+        </li>
+        <%end%>
+      </ul>
+    </div>
+
+    <div class="entries">
+      <h3> Journal Entries </h3>
+      <ul>
+        <%@trips.each do |trip|%>
+        <li class="trip">
+          <div class="date"> 
+            <h4><%=trip.date_camped%></h4>
+          </div>
+          <div class="trip-details">
+            PARK: <%=trip.park%> CAMPGROUND: <%=trip.campground%><br>
+            NOTES: <%=trip.notes%><br>
+            <a href="/trips/<%=trip.id%>">View</a>  |  <a href="/trips/<%=trip.id%>/edit">Edit</a>
+          </div>
+        </li><br>
+        <%end%>
+      </ul>
+    </div>
   </div>
 </main>
