@@ -2,7 +2,12 @@
   <div class="welcome">
     <h2>Welcome to CampTales</h2>
     <p>Keep track of where you have camped and where you plan to camp</p>
+    <%if !logged_in%>
     <button><a href="/login">Log in</a></button>
     <button><a href="/signup">Sign up</a></button>
+    <%else%>
+    <br>
+    <h3>You are already logged in as <%= current_user.username %></h2>
+    <%end%>
   </div>
 </main>

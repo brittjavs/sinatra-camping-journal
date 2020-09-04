@@ -7,7 +7,7 @@
 <main class="page">
   <div class="search-container form">
     <form class="search-bar" method="GET" action="/trips">
-    <input type="text" name="query">
+    <input type="text" name="query" placeholder="Search by Park Name">
     <input class="button" type="submit" value="Search">
     </form>
   </div>
@@ -16,11 +16,11 @@
       <h3> Camping Bucket List</h3>
       <ul>
         <%@bucketlist.each do |item|%>
-        <li>
-        <%=item.park%> - <%=item.campground%>
+        <li class="bucket-list-item">
+        <%=item.park%> <br> <%=item.campground%>
         <br>
         <a href="/trips/<%=item.id%>/edit">Edit</a>
-
+        <br>
         </li>
         <%end%>
       </ul>
@@ -35,9 +35,10 @@
             <h4><%=trip.date_camped%></h4>
           </div>
           <div class="trip-details">
-            PARK: <%=trip.park%> CAMPGROUND: <%=trip.campground%><br>
-            NOTES: <%=trip.notes%><br>
-            <a href="/trips/<%=trip.id%>">View</a>  |  <a href="/trips/<%=trip.id%>/edit">Edit</a>
+            PARK: <%=trip.park%> <br> 
+            CAMPGROUND: <%=trip.campground%><br>
+            
+            <a href="/trips/<%=trip.id%>">View</a>  |  <a href="/trips/<%=trip.id%>/edit">Edit</a><br>
           </div>
         </li><br>
         <%end%>

@@ -47,7 +47,7 @@ h2{
 }
 
 h3{
-  font-weight: 400;
+  font-weight: 700;
   font-size: 21px
 }
 .welcome button{
@@ -97,7 +97,6 @@ form{
   color: white;
   background-color: #648880;
   border: none;
-
 }
 
 .navbar {
@@ -127,10 +126,12 @@ form{
   text-align: center;
 }
 
+
 .page{
   width: 100%;
   background-color: white;
   text-align: center;
+  padding: 30px;
 }
 
 .container{
@@ -139,10 +140,6 @@ form{
   border-radius: 20px;
   text-align: center;
   color: white;
-}
-
-li.trip{
-  border-bottom: gray 1px solid;
 }
 
 form label, textarea{
@@ -168,20 +165,42 @@ textarea{
 
 .index-container{
   width: 90%;
-  margin: 0 auto;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: .7fr 2fr;
+  grid-gap: 50px;
 }
 
 .entries h3{
-  font-weight: 400;
+  font-weight: 700;
   font-size: 28px;
   margin-bottom: 10px;
 }
+.entries ul{
+  list-style-type: none;
+}
+li.trip a, li.bucket-list-item a{
+  color: rgb(171, 171, 171);
+}
+li.trip a:hover, li.bucket-list-item a:hover{
+  color: #648880;
+}
+li.trip{
+  border-bottom: rgb(171, 171, 171) 1px solid;
+}
 
 .bucket-list{
-  background-color: #89b0a7;
-  color: white;
+  background: linear-gradient(to bottom, #a1d3b0, #f6f1d3);
+  padding: 10px;
+}
+
+.bucket-list ul{
+  list-style-position: inside;
+}
+.bucket-list h3{
+  font-weight: 700;
+  font-size: 28px;
+  margin: 20px 0;
 }
 
 
