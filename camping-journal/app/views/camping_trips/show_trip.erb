@@ -10,9 +10,9 @@
   PARK: <%=@trip.park%> CAMPGROUND: <%=@trip.campground%><br>
   NOTES: <%=@trip.notes%><br>
 
-  <form method="POST" action="/trips/<%= @trip.id %>/delete">
+  <form class="form" method="POST" action="/trips/<%= @trip.id %>/delete">
   <input type = "hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Entry">
+  <input class="button" type="submit" value="Delete Entry">
   </form>
 </div>
 
