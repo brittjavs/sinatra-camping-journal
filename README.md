@@ -1,4 +1,5 @@
 # CampTales - A Camping Trip Journal 
+Live link - https://camptales.herokuapp.com/
 CampTales is an MVC Ruby/Sinatra Application that uses ActiveRecord. It was created for adventurers who would like to keep track of their camping experiences.
 
 ## User Story
