@@ -7,7 +7,7 @@ gem 'rake'
 gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
-gem 'pg'
+gem 'pg', '~> 0.20'
 
 group :test do
   gem 'rspec'
